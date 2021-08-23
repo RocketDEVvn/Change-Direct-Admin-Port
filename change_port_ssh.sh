@@ -34,7 +34,7 @@ echo "Một điều QUAN TRỌNG là cần thay đổi PORT không được trù
 echo "";
 echo "           Sau khi thêm, sửa xong. Bạn nhấn ESC, tiếp theo nhấn :wq để thoát";
 echo "==============================================================================";
-pause '                      Nhấn [Enter] để KHỞI ĐỘNG LẠI...';
+pause '                      Nhấn [Enter] để tiếp tục...';
 echo "==============================================================================";
 echo "";
 vi /etc/ssh/sshd_config;
@@ -68,6 +68,7 @@ pause '                      Nhấn [Enter] để KHỞI ĐỘNG LẠI...';
 echo "==============================================================================";
 echo "";
 cd /
-find . -name "change_port_ssh.sh" -delete
-find . -name "csf_install.sh" -delete
+find . -name "change_port_ssh.sh" -delete;
+find . -name "csf_install.sh" -delete;
+history -c;
 reboot
