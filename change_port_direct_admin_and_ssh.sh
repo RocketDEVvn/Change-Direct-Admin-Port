@@ -31,7 +31,6 @@ echo "==========================================================================
 echo "              Chúc mừng bạn đã Khai báo / Mở Port thành công ^^ ";
 echo "         Tuy nhiên bạn cần mở chặn trong Firewall để sử dụng port này";
 echo "";
-echo "";
 echo "           Trong file chuẩn bị được mở dưới đây bạn chú ý mục sau:";
 echo "   Bạn kéo xuống dưới cùng phần PORTS_directadmin = Bạn thêm PORT SSH vào tương ứng";
 echo "";
@@ -77,7 +76,7 @@ echo "==========================================================================
 echo "";
 vi /etc/sysconfig/selinux;
 sestatus;
-yum update -y​;
+yum update -y;
 echo "==============================================================================";
 echo "                       Cấu hình SSH đổi port mong muốn ";
 echo "";
