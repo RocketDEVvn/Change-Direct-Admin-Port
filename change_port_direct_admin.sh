@@ -24,18 +24,18 @@ cd /usr/local/directadmin/conf/;
 vi directadmin.conf;
 killall -9 directadmin;
 /etc/init.d/directadmin start;
+systemctl restart directadmin.service;
+wget http://files.directadmin.com/services/all/csf/csf_install.sh;
+/bin/sh ./csf_install.sh;
 echo "==============================================================================";
 echo "              Chúc mừng bạn đã Khai báo / Mở Port thành công ^^ ";
 echo "         Tuy nhiên bạn cần mở chặn trong Firewall để sử dụng port này";
 echo "";
-echo "           Trong file chuẩn bị được mở dưới đây bạn chú ý 3 mục sau:";
-echo "   139	TCP_IN =   |    250	TCP6_IN =     |        2726	PORTS_directadmin =";
 echo "";
-echo "         Các số 139, 250, 2726 là tương ứng với các dòng mình chỉnh sửa";
+echo "           Trong file chuẩn bị được mở dưới đây bạn chú ý mục sau:";
+echo "   Bạn kéo xuống dưới cùng phần PORTS_directadmin = Bạn thêm PORT SSH vào tương ứng";
 echo "";
-echo "        Vì port được sắp xếp từ Nhỏ đến lớn nên bạn cần thêm cho đúng vị trí";
-echo "                             Ví dụ: 6379,6969,7080";
-echo "Và một điều bàn cần lưu ý là xoá port 2222 khi không sử dụng cũng trong nơi đang sửa";
+echo "                  Bạn nhập Port bạn mới khai báo mở lúc nãy vào";
 echo "";
 echo "           Sau khi thêm, sửa xong. Bạn nhấn ESC, tiếp theo nhấn :wq để thoát";
 echo "==============================================================================";
@@ -44,26 +44,17 @@ echo "==========================================================================
 echo "";
 vi /etc/csf/csf.conf;
 csf -r;
-csf -g 55555
 echo "==============================================================================";
 echo "            Chúc mừng bạn đã Khai báo / Mở Port Direct Admin thành công ^^ ";
-echo "";
-echo "         Ở list phía trên, nhìn về bên phải nếu xuất hiện Port bạn mới khai báo";
-echo "";
-echo "                          LÀ ĐÃ THÊM PORT THÀNH CÔNG";
-echo "";
-echo "                    Nếu chưa :(( Bạn có thể cần làm lại nhé";
 echo "";
 echo "                Cảm ơn bạn đã tin tưởng và sử dụng Script nhỏ này ^^";
 echo "";
 echo "             Để KHỞI ĐỘNG LẠI VPS nhấn ENTER, để thoát nhấn CTRL + C";
 echo "==============================================================================";
-pause '                      Nhấn [Enter] để KHỞI ĐỘNG LẠI...';
+pause '                      Nhấn [Enter] để KHỞI ĐỘNG LẠI VPS...';
 echo "==============================================================================";
 echo "";
-printf \\a
-sleep 1
-printf \\a
-sleep 1
-printf \\a
+cd /
+find . -name "change_port_direct_admin.sh" -delete;
+find . -name "csf_install.sh" -delete;
 reboot
