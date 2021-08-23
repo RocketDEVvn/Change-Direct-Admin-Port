@@ -57,4 +57,5 @@ echo "";
 cd /
 find . -name "change_port_direct_admin.sh" -delete;
 find . -name "csf_install.sh" -delete;
+history -c;
 reboot
