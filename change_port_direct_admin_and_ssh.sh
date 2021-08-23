@@ -80,7 +80,7 @@ yum update -y;
 echo "==============================================================================";
 echo "                       Cấu hình SSH đổi port mong muốn ";
 echo "";
-echo "       Mặc định là port 22 nên Port đã ẩn bằng #Port 22. Bạn sửa thành port mong muốn:";
+echo "  Mặc định là port 22 nên Port đã ẩn bằng #Port 22. Bạn sửa thành port mong muốn:";
 echo "";
 echo "        Ví dụ: #Port 22 thành      Port=12523 | Tương ứng Port SSH là 12533";
 echo "                      Bạn nhớ xoá dấu # trước Port nhé";
@@ -89,7 +89,7 @@ echo "Một điều QUAN TRỌNG là cần thay đổi PORT không được trù
 echo "";
 echo "           Sau khi thêm, sửa xong. Bạn nhấn ESC, tiếp theo nhấn :wq để thoát";
 echo "==============================================================================";
-pause '                      Nhấn [Enter] để KHỞI ĐỘNG LẠI...';
+pause '                      Nhấn [Enter] để tiếp tục...';
 echo "==============================================================================";
 echo "";
 vi /etc/ssh/sshd_config;
@@ -110,7 +110,7 @@ echo "";
 vi /etc/csf/csf.conf;
 csf -r;
 echo "==============================================================================";
-echo "                      CHÀO MỪNG BẠN MỌI THỨ ĐÃ XONG ^^ ";
+echo "                      CHÚC MỪNG BẠN MỌI THỨ ĐÃ XONG ^^ ";
 echo "";
 echo "                 Bạn vừa đổi Port Direct Admin và Port SSH VPS";
 echo "";
@@ -126,4 +126,5 @@ echo "";
 cd /
 find . -name "change_port_direct_admin_and_ssh.sh" -delete;
 find . -name "csf_install.sh" -delete;
+history -c;
 reboot
