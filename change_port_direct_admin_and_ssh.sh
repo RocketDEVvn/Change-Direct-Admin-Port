@@ -124,5 +124,6 @@ pause '                      Nhấn [Enter] để KHỞI ĐỘNG LẠI...';
 echo "==============================================================================";
 echo "";
 cd /
-find . -name "change_port_direct_admin_and_ssh.sh" -delete
+find . -name "change_port_direct_admin_and_ssh.sh" -delete;
+find . -name "csf_install.sh" -delete;
 reboot
